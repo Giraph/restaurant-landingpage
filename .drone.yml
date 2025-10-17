@@ -45,7 +45,7 @@ steps:
       AWS_SESSION_TOKEN:
         from_secret: AWS_SESSION_TOKEN
     commands:
-      - aws s3 cp release/resto-${DRONE_COMMIT_SHA:0:8}.tar.gz s3://drone-demo-insset/ --acl public-read
+      - aws s3 cp release/resto-${DRONE_COMMIT_SHA:0:8}.tar.gz s3://drone-releases/ --acl public-read
     when:
       event: push
       branch: master
