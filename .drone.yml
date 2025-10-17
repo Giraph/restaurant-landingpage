@@ -13,8 +13,7 @@ steps:
     commands:
       - hugo --baseURL $BASE_URL
     when:
-      event:
-        - push
+      event: push
 
   - name: package-release-staging
     image: alpine:3.18
@@ -24,10 +23,8 @@ steps:
       - export SHORT_SHA=$(echo $DRONE_COMMIT_SHA | cut -c1-7)
       - tar -czf release/resto-$SHORT_SHA.tar.gz -C public .
     when:
-      event:
-        - push
-      branch:
-        - master
+      event: push
+      branch: master
     
   - name: package-release-prod
     image: alpine:3.18
@@ -50,7 +47,7 @@ steps:
         from_secret: AWS_SESSION_TOKEN
     commands:
       - export SHORT_SHA=$(echo $DRONE_COMMIT_SHA | cut -c1-7)
-      - aws s3 cp release/resto-${SHORT-SHA}.tar.gz s3://drone-releases/resto-${SHORT-SHA}.tar.gz --recursive --acl public-read
+      - aws s3 cp release/resto-${SHORT-SHA}.tar.gz s3://drone-releases/resto-${SHORT-SHA}.tar.gz --acl public-read
     when:
       event: push
       branch: master
