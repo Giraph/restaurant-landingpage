@@ -64,3 +64,4 @@ steps:
       - aws s3 cp release/resto-${DRONE_TAG}.tar.gz s3://drone-releases/resto-${DRONE_TAG}.tar.gz --acl public-read
     when:
       event: tag
+##
