@@ -17,7 +17,7 @@ steps:
     image: plugins/s3
     settings:
       bucket: drone-demo-insset              
-      region: eu-east-1                       
+      region: us-east-1                       
       source: public/**                          
       target: /                               
       acl: public-read                        
