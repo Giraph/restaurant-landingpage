@@ -14,7 +14,7 @@ steps:
       - hugo --baseURL $BASE_URL
 
   - name: deploy-to-s3
-    image: amazon/aws-cli:2.14.12   
+    image: amazon/aws-cli:2.31.17   
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: AWS_ACCESS_KEY_ID
