@@ -18,7 +18,7 @@ steps:
     settings:
       bucket: drone-demo-insset              
       region: eu-east-1                       
-      source: public                          
+      source: public/**                          
       target: /                               
       acl: public-read                        
     environment:
