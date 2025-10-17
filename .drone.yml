@@ -14,7 +14,7 @@ steps:
       - hugo --baseURL $BASE_URL
     when:
       event: push
-
+##
   - name: package-release-staging
     image: alpine:3.18
     commands:
