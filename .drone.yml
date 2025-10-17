@@ -4,7 +4,7 @@ hugo_env: &hugo_env
 
 kind: pipeline
 name: hugo-s3-deploy
-
+#test
 steps:
   - name: hugo-build
     image: peaceiris/hugo:v0.65.3-mod
